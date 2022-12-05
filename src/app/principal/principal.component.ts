@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent implements OnInit {
-  pokemonId:number=0;
+  
+  static pokemonId: number | undefined;
   constructor(){
     var pokemonId:number;
   }
@@ -58,7 +59,7 @@ export class PrincipalComponent implements OnInit {
     };
     // FUNCIONES
     // FUNCIÓN CAMBIAR POKEMON
-    function changePokemon(n:number):void{
+    const changePokemon = (n:number):void =>{
       if(n>=0&&n<=151)
       {
         name.innerText = lista[n].name
@@ -70,6 +71,8 @@ export class PrincipalComponent implements OnInit {
         monitor.style.backgroundImage = urlType[lista[n].type1]
         labelType1.style.backgroundImage = urlType[lista[n].type1]
         labelType2.style.backgroundImage = urlType[lista[n].type2]
+        PrincipalComponent.pokemonId = n
+        console.log(PrincipalComponent.pokemonId)
       }
       else if (n==-1)
       {
@@ -114,6 +117,7 @@ export class PrincipalComponent implements OnInit {
           lista = pokemonList
           monitor.style.backgroundImage = 'assets/grassType.png'
           num = 0
+          this.pokemonId = num
           changePokemon(num)
           }
         catch (error){

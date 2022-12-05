@@ -6,14 +6,18 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './secondary.component.html',
   styleUrls: ['./secondary.component.scss']
 })
-export class SecondaryComponent {
+export class SecondaryComponent implements PrincipalComponent, OnInit {
 
   constructor (){}
-  pokemonId!: number;
+  
+  ngOnInit(): void {
+     console.log(PrincipalComponent.pokemonId);
 
-  // ngOnInit(): void {
+    const changePokemon = ():void=>{
+      console.log(PrincipalComponent.pokemonId);
+      
+    }
     
-  //   throw new Error('Method not implemented.');
-  // }
+  }
 
 }
