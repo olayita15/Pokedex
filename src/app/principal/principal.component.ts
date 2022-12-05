@@ -1,3 +1,4 @@
+import { SecondaryComponent } from './../secondary/secondary.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -71,7 +72,7 @@ export class PrincipalComponent implements OnInit {
         monitor.style.backgroundImage = urlType[lista[n].type1]
         labelType1.style.backgroundImage = urlType[lista[n].type1]
         labelType2.style.backgroundImage = urlType[lista[n].type2]
-        PrincipalComponent.pokemonId = n
+        PrincipalComponent.pokemonId = n+1
         console.log(PrincipalComponent.pokemonId)
       }
       else if (n==-1)
@@ -101,7 +102,7 @@ export class PrincipalComponent implements OnInit {
                 }
             })
             const data = await rest.json()
-            console.log(data.sprites.front_default)
+            
             pokemon = {
               name: data.name,
               image: data.sprites.other.home.front_default,

@@ -54,6 +54,16 @@ main {
 #type img{
     width: 50px;
     height: 50px;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
 }
 #type div ul{
     display: flex;

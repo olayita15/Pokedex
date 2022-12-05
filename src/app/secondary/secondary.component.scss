@@ -1,3 +1,37 @@
+// Default options
+$defaultDuration: .3s;
+$primaryColour: #ececec;
+$secondaryColour: #666;
+$shadowColour: rgba(0, 0, 0, .6);
+
+
+// As is often the case, some devices/browsers need additional code to get CSS to work
+// in the most desired way. These mixins are used to quickly drop in hacks for each element
+@mixin hideTapHighlightColor() {
+	//Prevent highlight colour when element is tapped
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@mixin hardwareAccel() {
+	//Improve performance on mobile/tablet devices
+	transform: translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+	//Improve aliasing on mobile/tablet devices
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+/* Push */
+@keyframes push {
+	50% {
+		transform: scale(.8);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
 main {
     width: 100%;
     display: flex;
@@ -25,7 +59,7 @@ main {
     height: 100px;
     margin: 5px 15px;
     border-radius: 10px;
-    background-color: gray;
+    background-color: white;
 }
 
 #botones {
@@ -42,18 +76,28 @@ main {
     height: 50px;
     margin: 0;
     padding: 0;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
 }
 
 #botones img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 #shinyBox {
     display: flex;
     flex-flow: row nowrap;
     align-self: flex-end;
-    margin-right: 20px;
+    margin-right: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -63,6 +107,16 @@ main {
     margin: 0 5px;
     font-size: 8px;
     text-align: center;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
 }
 
 #sexBox {
@@ -75,6 +129,7 @@ main {
 }
 
 #sexButtons {
+    
 }
 
 #sexBox button {
@@ -83,11 +138,21 @@ main {
     margin: 0;
     padding: 0;
     justify-self: flex-start;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
 }
 
 #sexBox img {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
 }
 
 #sexBox picture {
