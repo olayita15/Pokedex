@@ -12,6 +12,12 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
   
   ngOnInit(): void {
      console.log(PrincipalComponent.pokemonId);
+     const descriptionButton:any = document.getElementById('descriptionButton')
+
+     descriptionButton.onclick = function description()
+     {
+      console.log(PrincipalComponent.pokemonId);
+     }
 
     const changePokemon = ():void=>{
       console.log(PrincipalComponent.pokemonId);
