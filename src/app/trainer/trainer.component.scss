@@ -1,0 +1,97 @@
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    width: 510px;
+    height: 460px;
+    border-style: ridge;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+#titleBox {
+    width: 100%;
+    color: white;
+    background-color: #497ECC;
+    border-style: ridge;
+    margin: 0;
+    padding: 0;
+}
+
+#titleBox h1 {
+    margin-left: 10px;
+}
+
+#subtitleBadge {
+    width: 100%;
+    background-color: #76adff;
+    text-align: center;
+    border-style: ridge;
+}
+
+#mainBox {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 0;
+    padding: 0;
+}
+
+#mainImageBox {
+    margin-left: 10px;
+    padding: 5px 0;
+    align-self: center;
+    width: 110px;
+}
+
+#trainerImage {
+    width: 100px;
+    height: 200px;
+}
+
+#secondBox{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#badges {
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+#badges ul{
+    list-style: none;
+    margin-right: 10px; 
+}
+
+#badge {
+    width: 20px;
+    height: 20px;
+}
+
+#informationBox {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#infoTrainer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: flex-start;
+    justify-self: flex-start;
+    margin-left: 10px;
+}
+#infoTrainer label{
+    margin-bottom: 10px;
+    text-align: left;
+    border-style: ridge;
+}
+
+#pokemonsBox {
+    margin-right: 10px;
+}
+
+#pokemonsBox img{
+    width: 90px;
+    height: 90px;
+    border-style:ridge;
+}

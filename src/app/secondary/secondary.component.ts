@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondaryComponent implements PrincipalComponent, OnInit {
   static pokemon: any;
-
   constructor (){}
   
   ngOnInit(): void {
@@ -34,6 +33,7 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
 
     const maleButton:any = document.getElementById('maleButton')
     const femaleButton:any = document.getElementById('femaleButton')
+
 
     async function obtenerPokemon(n:number|any) {
       let pokemon: {
@@ -64,8 +64,8 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
           pokemon = {
             image: data.sprites.front_default,
             name: data.name,
-            weight: data.weight + ' Kg',
-            height: data.height + ' m',
+            weight: data.weight + ' hg',
+            height: data.height + ' dm',
             vida: data.stats[0].base_stat,
             attack: data.stats[1].base_stat,
             defense: data.stats[2].base_stat,
@@ -81,8 +81,6 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
         console.log(error)
       }
     }
-
-     console.log(PrincipalComponent.pokemonId);
      
     function changePokemon(title:string,contain:string):void{
       mainTitle.innerText = title;

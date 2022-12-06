@@ -1,3 +1,6 @@
+$small: 757px;
+$medium: 900px;
+
 body{
     width: 100%;
     display: flex;
@@ -5,4 +8,10 @@ body{
     justify-content: center;
     align-items: center;
     margin: 100px 0;
+}
+
+@media screen and (max-width: $small) {
+    body {
+        flex-flow: column nowrap;
+    }    
 }

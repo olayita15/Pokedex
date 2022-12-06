@@ -36,6 +36,8 @@ export class PrincipalComponent implements OnInit {
     const labelType2:any = document.getElementById('type2')
     const leftButton:any = document.getElementById('arrowLeft')
     const rightButton:any = document.getElementById('arrowRight')
+    const upButton:any = document.getElementById('arrowUp')
+    const downButton:any = document.getElementById('arrowDown')
     
     let lista:any = []
     let num:number
@@ -75,19 +77,17 @@ export class PrincipalComponent implements OnInit {
         PrincipalComponent.pokemonId = n+1
         console.log(PrincipalComponent.pokemonId)
       }
-      else if (n==-1)
-      {
-        n = 0
-        imgPrincipal.setAttribute('src', 'assets/pokedex.png')
-      }
-      else {
-        imgPrincipal.setAttribute('src', 'assets/pokedex.png')
-      }
     }
     // ENCENDIDO
     onButton.onclick = async function on(){
       let pokemonList = [];
-      let pokemon: {name:string, image:string, id:string, type1:string, type2:string};
+      let pokemon: {
+        name:string, 
+        image:string, 
+        id:string, 
+        type1:string, 
+        type2:string,
+      };
       redLed.style.backgroundImage = '-webkit-linear-gradient(top, #fb1304 0%, #e35843 50%, #edad99 100%)'
       try{
           for(let i =1; i<152;i++)
@@ -108,7 +108,7 @@ export class PrincipalComponent implements OnInit {
               image: data.sprites.other.home.front_default,
               id: data.id,
               type1: data.types[0].type.name,
-              type2: ''
+              type2: '',
             }
             if(data.types[1]!=undefined){
               pokemon.type2 = data.types[1].type.name
@@ -152,11 +152,25 @@ export class PrincipalComponent implements OnInit {
     leftButton.onclick = function left(){
       changePokemon(num--) 
       console.log(num)
+      if(num<=0){
+        num = 0
+      }
     }
 
     rightButton.onclick = function rigth(){
       changePokemon(num++)
       console.log(num)
+      if(num>=150){
+        num = 151
+      }
+    }
+
+    upButton.onclick = function up(){
+      
+    }
+
+    downButton.onclick = function down(){
+      
     }
 
   }
