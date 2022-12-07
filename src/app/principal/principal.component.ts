@@ -10,9 +10,7 @@ export class PrincipalComponent implements OnInit {
   
   static pokemonId: number | undefined;
 
-  constructor(){
-    var pokemonId:number;
-  }
+  constructor(){}
 
   ngOnInit():void {
     // DOM
