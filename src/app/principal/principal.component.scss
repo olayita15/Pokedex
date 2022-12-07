@@ -114,6 +114,11 @@ main {
     background-position: center;
     background-size: 50% auto;
 }
+
+#monitor.close {
+    display: none;
+}
+
 #name {
     justify-self: flex-start;
     align-self: flex-start;
@@ -151,6 +156,36 @@ main {
     color: #000000;
     border-radius: 0.15rem;
 }
+// Menu hamburguesa
+#menu {
+    display: none;
+}
+
+#menu.show {
+    width: 90%;
+    height: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: black;
+    border-radius: 10px;
+    border-style: double;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    background-position: center;
+    background-size: 50% auto;
+    align-items: center;
+    justify-content: center;
+} 
+
+#menu ul {
+    list-style: none;
+    margin-right: 40px;
+}
+
+#menu li {
+    margin: 15px 0;
+}
+
 // Botones de encendido y apagado
 #play {
     display: flex;

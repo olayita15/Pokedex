@@ -40,6 +40,7 @@ export class PrincipalComponent implements OnInit {
     
     let lista:any = []
     let num:number
+    let verificacion:boolean = false
     // LISTA DE BACKGROUNDS
     var urlType: { [key: string]: string; } = {
       "grass" : "url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1fa0f80-33c1-4516-8baa-90fb67ed2269/d755hbj-2a350c33-b053-497e-aa3e-26b9908bcb83.png/v1/fill/w_1024,h_576,q_80,strp/grass_pokemon_energy_wallpaper_by_elbarnzo_d755hbj-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvZDFmYTBmODAtMzNjMS00NTE2LThiYWEtOTBmYjY3ZWQyMjY5XC9kNzU1aGJqLTJhMzUwYzMzLWIwNTMtNDk3ZS1hYTNlLTI2Yjk5MDhiY2I4My5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.b2e4tYA7xn1Gr32PuQMO5lKremR6QGg8uohiTOBa29Y')",
@@ -79,6 +80,7 @@ export class PrincipalComponent implements OnInit {
     }
     // ENCENDIDO
     onButton.onclick = async function on(){
+      verificacion=true;
       let pokemonList = [];
       let pokemon: {
         name:string, 
@@ -126,6 +128,7 @@ export class PrincipalComponent implements OnInit {
     }
     // APAGADO
     offButton.onclick = function off(){
+      verificacion=false;
       typeImg.setAttribute('src','assets/pokeIcon.png')
       monitor.style.background = 'black'
       name.innerText = null
@@ -194,6 +197,19 @@ export class PrincipalComponent implements OnInit {
     downButton.onclick = function down(){
       
     }
+
+    // MENU HAMBURGUESA
+    const menu:any = document.getElementById('menu')
+    typeImg.addEventListener('click', (event: any)=>{
+      if(verificacion){
+        console.log('funcionando')
+        menu.classList.toggle('show')
+        monitor.classList.toggle('close')
+        labelType1.innerText = null
+        labelType2.innerText = null
+      }
+    }
+     );
 
   }
 }
