@@ -10,6 +10,12 @@ body{
     margin: 100px 0;
 }
 
+@media screen and (max-width: 1230px) {
+    body {
+        flex-flow: column nowrap;
+    } 
+}
+
 @media screen and (max-width: $small) {
     body {
         flex-flow: column nowrap;

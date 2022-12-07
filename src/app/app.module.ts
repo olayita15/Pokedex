@@ -14,7 +14,7 @@ import { TrainerComponent } from './trainer/trainer.component';
     TrainerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
