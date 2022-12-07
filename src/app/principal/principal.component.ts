@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class PrincipalComponent implements OnInit {
   
   static pokemonId: number | undefined;
+  
   constructor(){
     var pokemonId:number;
   }
@@ -141,9 +142,16 @@ export class PrincipalComponent implements OnInit {
     selectorButton.onclick = function select(){
       let n:string = searchInput.value
       lista.forEach((element: any) => {
-        if(n==element.name||n==element.id){
+        if(n.toLowerCase()==element.name||n==element.id){
           num = element.id-1
           changePokemon(num)
+        }
+        else {
+          name.innerText = 'PÓKEMON NO ENCONTRADO'
+          imgPrincipal.setAttribute('src', 'https://media0.giphy.com/media/Hw7O9Np7JpXK8/giphy.gif')
+          pokeId.innerText = '#404 NOT FOUND'
+          monitor.style.backgroundColor = '#FFFFFF'
+          monitor.style.backgroundImage = 'none'
         }
       })
     }

@@ -10,6 +10,7 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
   static pokemon: any;
   constructor (){}
   
+  
   ngOnInit(): void {
     // DOOM
     // MONITOR
@@ -62,7 +63,7 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
           console.log(SecondaryComponent.pokemon)
           console.log(data.stats[0].base_stat)
           pokemon = {
-            image: data.sprites.front_default,
+            image: data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'],
             name: data.name,
             weight: data.weight + ' hg',
             height: data.height + ' dm',
@@ -72,7 +73,7 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
             specialAttack: data.stats[3].base_stat,
             specialDefense: data.stats[4].base_stat,
             speed: data.stats[5].base_stat,
-            shiny: data.sprites.front_shiny,
+            shiny: data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny'],
             female: data.sprites.front_female,
           }
           SecondaryComponent.pokemon = pokemon;
@@ -95,6 +96,7 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
       }
       mainValue.innerText = null;
     }
+
 
      descriptionButton.onclick = function description(){
       obtenerPokemon(PrincipalComponent.pokemonId);

@@ -25,7 +25,7 @@ export class TrainerComponent implements OnInit{
           })
           const data = await rest.json()
           pokemon = {
-            image: data.sprites.front_default,
+            image: data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'],
           }
           lista.push(pokemon);
       }
@@ -55,9 +55,9 @@ export class TrainerComponent implements OnInit{
     const poke6:any = document.getElementById('poke6')
 
     const pokeGenerator:any = document.getElementById('pokeGenerator')
-
+    equipoPokemon()
     pokeGenerator.onclick = function generarPokemons(){
-      equipoPokemon()
+      
       poke1.setAttribute('src', lista[0].image)
       poke2.setAttribute('src', lista[1].image)
       poke3.setAttribute('src', lista[2].image)

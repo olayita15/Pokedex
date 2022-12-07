@@ -41,15 +41,16 @@ main {
 
 
 #mainImageBox {
-    margin-left: 10px;
+
     padding: 5px 0;
+    margin-right: 20px;
     align-self: center;
     width: 110px;
 }
 
 #trainerImage {
-    width: 100px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
 
 #secondBox{
@@ -104,6 +105,7 @@ main {
 @media screen and (max-width: 1230px)  {
     main {
         width: 100%;
+        margin: 0;
         }
     }
 
