@@ -1,6 +1,6 @@
 # Pokedex
 
-![poliwrath](https://projectpokemon.org/images/normal-sprite/poliwrath.gif)
+![poliwrath](http://pa1.narvii.com/6111/4d07070b3f6dbb1b52875a4bb8a7ca6492a861c9_00.gif)
 
 Versión: 0.9.0 Beta (En desarrollo)
 
