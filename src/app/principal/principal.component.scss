@@ -1,0 +1,394 @@
+// Default options
+$defaultDuration: .3s;
+$primaryColour: #ececec;
+$secondaryColour: #666;
+$shadowColour: rgba(0, 0, 0, .6);
+
+
+// As is often the case, some devices/browsers need additional code to get CSS to work
+// in the most desired way. These mixins are used to quickly drop in hacks for each element
+@mixin hideTapHighlightColor() {
+	//Prevent highlight colour when element is tapped
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@mixin hardwareAccel() {
+	//Improve performance on mobile/tablet devices
+	transform: translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+	//Improve aliasing on mobile/tablet devices
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+main {
+    background-color: #a62b2b;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border: 10px ridge #a62b2b;
+    box-shadow:
+        rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+        rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+        rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+        rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+    border-top-right-radius: 15em 4em;
+}
+// Zona de arriba
+@mixin flexible {
+    display: $dis;
+    flex-flow: $direction $corte;
+    justify-content: $just;
+    align-items: $align;
+}
+#type{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 10px 0;
+    margin-left: 15px;
+}
+#type img{
+    width: 50px;
+    height: 50px;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+#type div ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-self: flex-start;
+    align-self: flex-start;
+    list-style: none;
+}
+#type input{
+    width: 200px;
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-left: 50px;
+    margin-right: 15px;
+}
+.red {
+    background-image: -webkit-linear-gradient(top, #fb1304 0%, #e35843 50%, #edad99 100%);
+}
+.green {
+    background-image: -webkit-linear-gradient(top, #13fB04 0%, #58e343 50%, #ADED99 100%);
+}
+.yellow {
+    background-image: -webkit-linear-gradient(top, #f9a004 0%, #e0ac45 50%, #ead698 100%);
+}
+
+.led {
+    border-radius: 5px;
+    width: 2px;
+    height: 2px;
+    box-shadow: 0px 0px 1px black;
+    zoom: 4;
+    margin: 0 1px;
+    background-image: -webkit-linear-gradient(top, #000000 0%, #000000 50%, #000000 100%);
+}
+
+// Pantalla principal
+#monitor {
+    width: 90%;
+    height: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: black;
+    border-radius: 10px;
+    border-style: double;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    background-position: center;
+    background-size: 50% auto;
+}
+
+#monitor.close {
+    display: none;
+}
+
+#name {
+    justify-self: flex-start;
+    align-self: flex-start;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+    font-style: normal;
+    text-transform: capitalize;
+    color: #000000;
+    border-radius: 0.15rem;
+    
+}
+#imgPrincipal {
+    display: none;
+    width: 150px;
+    height: 150px;
+    justify-self: center;
+    align-self: center;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/287/287221.png');
+    background-size:contain;
+}
+#number {
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin: 0 10px 50px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+    font-style: normal;
+    text-transform: capitalize;
+    color: #000000;
+    border-radius: 0.15rem;
+}
+// Menu hamburguesa
+#menu {
+    display: none;
+}
+
+#menu.show {
+    width: 90%;
+    height: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: black;
+    border-radius: 10px;
+    border-style: double;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    background-position: center;
+    background-size: 50% auto;
+    align-items: center;
+    justify-content: center;
+} 
+
+#menu ul {
+    list-style: none;
+    margin-right: 40px;
+}
+
+#menu li {
+    margin: 15px 0;
+}
+
+// Botones de encendido y apagado
+#play {
+    display: flex;
+    flex-flow: row nowrap;
+    align-self: flex-start;
+    margin-left: 10px;
+}
+#play button {
+    border-radius: 5px;
+    height: 10px;
+    width: 55px;    
+    font-size: 7px;
+    margin: 5px 10px;
+    
+    text-align: center;
+    line-height: 0;
+    box-shadow:
+    rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+#on {
+    color: white;
+    background-image: url('https://previews.123rf.com/images/madredus/madredus1507/madredus150700202/42855001-textura-de-cuero-verde-sint%C3%A9tico-o-de-fondo.jpg');
+    background-position: center;
+    background-size:cover;
+}
+#off {
+    color: white;
+    background-image: url('https://us.123rf.com/450wm/claudiodivizia/claudiodivizia1708/claudiodivizia170801460/84793805-burdeos-textura-de-cuero-rojo-%C3%BAtil-como-fondo.jpg');
+    background-position: center;
+    background-size:cover;
+}
+// Los selectores
+#selectors {
+    width: 300px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    background-color: #e93c3c8f;
+    border-radius: 10px;
+}
+/* Push */
+@keyframes push {
+	50% {
+		transform: scale(.8);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+#selector {
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    text-align: center;
+    text-indent: 0;
+    margin-left: 10px;
+    color: white;
+    background-image: url('https://img.freepik.com/foto-gratis/fondo-textura-cuero-negro-original_24972-1600.jpg');
+    background-position: center;
+    background-size:cover;
+	@include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+#typesBox {
+    width: 130px;
+}
+
+#types {
+    width: 130px;
+    height: 35px;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 45px;
+    list-style: none;
+    text-transform: capitalize;
+    color: white;
+    border: black;
+    border-style: double;
+    text-align: center;
+}
+#types li{
+    text-align: center;
+}
+#type1 {
+    background-color: gray;
+}
+#type2 {
+    background-color: white;
+}
+
+#arrows {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    list-style: none;
+}
+
+#arrows button {
+    width: 20px;
+    height: 25px;
+    color: white;
+    background-image: url('https://img.freepik.com/foto-gratis/fondo-textura-cuero-negro-original_24972-1600.jpg');
+    background-position: center;
+    background-size:cover;
+    margin:0 15px;
+}
+#sides {
+    display: flex;
+    flex-flow: row nowrap;
+}
+#arrowUp {
+    rotate: 90deg;
+    border-top-right-radius: 15em 4em;
+    border-top-left-radius: 45em 40em;
+    border-bottom-right-radius: 15em 4em;
+    border-bottom-left-radius: 45em 40em;
+    
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+
+#arrowDown {
+    rotate: 90deg;
+    border-top-right-radius: 45em 40em;
+    border-top-left-radius: 15em 4em;
+    border-bottom-right-radius: 45em 40em;
+    border-bottom-left-radius: 15em 4em;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+
+#arrowLeft {
+    border-top-right-radius: 15em 4em;
+    border-top-left-radius: 45em 40em;
+    border-bottom-right-radius: 15em 4em;
+    border-bottom-left-radius: 45em 40em;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+
+#arrowRight {
+    border-top-right-radius: 45em 40em;
+    border-top-left-radius: 15em 4em;
+    border-bottom-right-radius: 45em 40em;
+    border-bottom-left-radius: 15em 4em;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}

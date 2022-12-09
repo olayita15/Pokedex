@@ -1,0 +1,194 @@
+// Default options
+$defaultDuration: .3s;
+$primaryColour: #ececec;
+$secondaryColour: #666;
+$shadowColour: rgba(0, 0, 0, .6);
+
+$small: 1230px;
+
+
+// As is often the case, some devices/browsers need additional code to get CSS to work
+// in the most desired way. These mixins are used to quickly drop in hacks for each element
+@mixin hideTapHighlightColor() {
+	//Prevent highlight colour when element is tapped
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@mixin hardwareAccel() {
+	//Improve performance on mobile/tablet devices
+	transform: translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+	//Improve aliasing on mobile/tablet devices
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+/* Push */
+@keyframes push {
+	50% {
+		transform: scale(.8);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+main {
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-color: #a62b2b;
+    border-radius: 10px;
+    border: 10px ridge #a62b2b;
+    box-shadow:
+        rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+        rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+        rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+        rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+    padding: 17px 10px;
+    margin-top: 50px;
+}
+
+
+
+#pantalla {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    margin: 5px 15px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#botones {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+}
+
+#botones button {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+
+#botones img {
+    width: 30px;
+    height: 30px;
+}
+
+#shinyBox {
+    display: flex;
+    flex-flow: row nowrap;
+    align-self: flex-end;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#shinyBox button {
+    width: 42px;
+    height: 16px;
+    margin: 0 5px;
+    font-size: 8px;
+    text-align: center;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+
+#sexBox {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 5px 35px;
+}
+
+#sexButtons {
+    
+}
+
+#sexBox button {
+    width: 50px;
+    height:50px;
+    margin: 0;
+    padding: 0;
+    justify-self: flex-start;
+    @include hideTapHighlightColor();
+	@include hardwareAccel();
+	@include improveAntiAlias();
+
+	&:active {
+		animation-name: push;
+		animation-duration: $defaultDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+}
+
+#sexBox img {
+    width: 20px;
+    height: 20px;
+}
+
+#sexBox picture {
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0px 0px 1px black;
+    zoom: 4;
+    margin: 0 1px;
+    background-image: -webkit-linear-gradient(top, #000000 0%, #000000 50%, #000000 100%);
+}
+
+#miniMonitores {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+#miniMonitores div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    background-color: gray;
+}
+
+@media screen and (max-width: $small) {
+    main{
+        margin-top: 0;
+    }   
+}

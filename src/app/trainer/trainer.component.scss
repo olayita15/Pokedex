@@ -1,0 +1,147 @@
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    width: 100%;
+    height: 420px;
+    border-style: ridge;
+    margin: 55px 0 0 0;
+    padding: 0;
+}
+
+
+
+#titleBox {
+    width: 100%;
+    color: white;
+    background-color: #497ECC;
+    border-style: ridge;
+    margin: 0;
+    padding: 0;
+}
+
+#titleBox h1 {
+    margin-left: 10px;
+}
+
+#subtitleBadge {
+    width: 100%;
+    background-color: #76adff;
+    text-align: center;
+    border-style: ridge;
+}
+
+#mainBox {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#mainImageBox {
+
+    padding: 5px 0;
+    margin-right: 20px;
+    align-self: center;
+    width: 110px;
+}
+
+#trainerImage {
+    width: 150px;
+    height: 150px;
+}
+
+#secondBox{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 10px;
+}
+
+#badges {
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+#badges ul{
+    list-style: none;
+    margin-right: 10px; 
+}
+
+#badge {
+    width: 20px;
+    height: 20px;
+}
+
+#informationBox {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#infoTrainer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: flex-start;
+    justify-self: flex-start;
+    margin-left: 10px;
+}
+#infoTrainer label{
+    margin-bottom: 10px;
+    text-align: left;
+    border-style: ridge;
+}
+
+#pokemonsBox {
+    margin-right: 10px;
+}
+
+#pokemonsBox img{
+    width: 85px;
+    height: 85px;
+    border-style:ridge;
+}
+
+@media screen and (max-width: 1230px)  {
+    main {
+        width: 100%;
+        margin: 0;
+        }
+    }
+
+
+@media screen and (max-width: 528px)  {
+    main {
+        height: 700px;
+    }
+
+    #mainBox{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    main {
+        height: 100%;
+    }
+    #informationBox {
+        padding-top: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        text-align: center;
+    }
+    #infoTrainer {
+        align-self: center;
+    }
+
+    #infoTrainer label{
+        text-align: center;
+    }
+
+    #pokemonsBox {
+        margin-top: 10px;
+    }
+}
+
