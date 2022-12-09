@@ -1,5 +1,5 @@
 import { PrincipalComponent } from './../principal/principal.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-secondary',
@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 export class SecondaryComponent implements PrincipalComponent, OnInit {
   static pokemon: any;
   constructor (){}
-  
   
   ngOnInit(): void {
     // DOOM

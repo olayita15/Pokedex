@@ -1,5 +1,5 @@
 import { SecondaryComponent } from './../secondary/secondary.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-principal',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent implements OnInit {
+
+
   
   static pokemonId: number | undefined;
 
@@ -200,6 +202,7 @@ export class PrincipalComponent implements OnInit {
 
     // MENU HAMBURGUESA
     const menu:any = document.getElementById('menu')
+    const logo:any = document.getElementById('logo')
     typeImg.addEventListener('click', (event: any)=>{
       if(verificacion){
         console.log('funcionando')
@@ -207,6 +210,8 @@ export class PrincipalComponent implements OnInit {
         monitor.classList.toggle('close')
         labelType1.innerText = null
         labelType2.innerText = null
+        logo.setAttribute('src','https://olayita15.github.io/img/logo.svg')
+        // https://olayita15.github.io/img/logo.svg
       }
     }
      );
