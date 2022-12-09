@@ -1,4 +1,4 @@
-import { SecondaryComponent } from './../secondary/secondary.component';
+import { PokemonService } from './../pokemon.service';
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 @Component({
@@ -8,11 +8,11 @@ import { Component, OnInit, Input, HostListener } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-
-  
   static pokemonId: number | undefined;
 
-  constructor(){}
+  constructor( public PokemonService: PokemonService ){}
+  
+  
 
   ngOnInit():void {
     // DOM
@@ -146,7 +146,7 @@ export class PrincipalComponent implements OnInit {
     
     // FUNCION SELECCIONAR
 
-    function select(){
+    const select = () =>{
       let n:string = searchInput.value
       lista.forEach((element: any) => {
         if(n.toLowerCase()==element.name||n==element.id){
@@ -154,6 +154,7 @@ export class PrincipalComponent implements OnInit {
           changePokemon(num)
           searchInput.value = null
         }
+      console.log(this.PokemonService)
         // else{
         //   name.innerText = 'PÓKEMON NO ENCONTRADO'
         //   imgPrincipal.setAttribute('src', 'https://media0.giphy.com/media/Hw7O9Np7JpXK8/giphy.gif')

@@ -1,4 +1,4 @@
-import { PrincipalComponent } from './../principal/principal.component';
+import { PokemonService } from './../pokemon.service';
 import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
   templateUrl: './secondary.component.html',
   styleUrls: ['./secondary.component.scss']
 })
-export class SecondaryComponent implements PrincipalComponent, OnInit {
+export class SecondaryComponent implements OnInit {
   static pokemon: any;
   constructor (){}
   
@@ -97,60 +97,60 @@ export class SecondaryComponent implements PrincipalComponent, OnInit {
     }
 
 
-     descriptionButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Nombre',SecondaryComponent.pokemon.name);
-     }
-     pesoButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Peso',SecondaryComponent.pokemon.weight);
-     }
-     alturaButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Altura',SecondaryComponent.pokemon.height);
-     }
-     vidaButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Vida',SecondaryComponent.pokemon.vida);
-     }
-     ataqueButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Ataque',SecondaryComponent.pokemon.attack);
-     }
-     defensaButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Defensa',SecondaryComponent.pokemon.defense);
-     }
-     ataqueEspecialButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Ataque Especial',SecondaryComponent.pokemon.specialAttack);
-     }
-     defensaEspecialButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Defensa Especial',SecondaryComponent.pokemon.specialDefense);
-     }
-     velocidadButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changePokemon('Velocidad',SecondaryComponent.pokemon.speed);
-     }
+    //  descriptionButton.onclick = function description(){
+    //   obtenerPokemon(PrincipalComponent.pokemonId);
+    //   changePokemon('Nombre',SecondaryComponent.pokemon.name);
+    //  }
+    //  pesoButton.onclick = function description(){
+    //   obtenerPokemon(PrincipalComponent.pokemonId);
+    //   changePokemon('Peso',SecondaryComponent.pokemon.weight);
+    //  }
+    //  alturaButton.onclick = function description(){
+    //   obtenerPokemon(PrincipalComponent.pokemonId);
+    //   changePokemon('Altura',SecondaryComponent.pokemon.height);
+    //  }
+    //  vidaButton.onclick = function description(){
+    //   obtenerPokemon(PrincipalComponent.pokemonId);
+    //   changePokemon('Vida',SecondaryComponent.pokemon.vida);
+    //  }
+  //    ataqueButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changePokemon('Ataque',SecondaryComponent.pokemon.attack);
+  //    }
+  //    defensaButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changePokemon('Defensa',SecondaryComponent.pokemon.defense);
+  //    }
+  //    ataqueEspecialButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changePokemon('Ataque Especial',SecondaryComponent.pokemon.specialAttack);
+  //    }
+  //    defensaEspecialButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changePokemon('Defensa Especial',SecondaryComponent.pokemon.specialDefense);
+  //    }
+  //    velocidadButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changePokemon('Velocidad',SecondaryComponent.pokemon.speed);
+  //    }
      
-     normalButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changeImage('Normal',SecondaryComponent.pokemon.image)
-     }
+  //    normalButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changeImage('Normal',SecondaryComponent.pokemon.image)
+  //    }
 
-     shinyButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changeImage('Shiny',SecondaryComponent.pokemon.shiny)
-     }
-     maleButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changeImage('Macho',SecondaryComponent.pokemon.image)
-     }
-     femaleButton.onclick = function description(){
-      obtenerPokemon(PrincipalComponent.pokemonId);
-      changeImage('Hembra',SecondaryComponent.pokemon.female)
-     }
+  //    shinyButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changeImage('Shiny',SecondaryComponent.pokemon.shiny)
+  //    }
+  //    maleButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changeImage('Macho',SecondaryComponent.pokemon.image)
+  //    }
+  //    femaleButton.onclick = function description(){
+  //     obtenerPokemon(PrincipalComponent.pokemonId);
+  //     changeImage('Hembra',SecondaryComponent.pokemon.female)
+  //    }
+  // }
   }
-
 }
